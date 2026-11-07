@@ -1,0 +1,4 @@
+Design Memo (Ronan Christie)
+Why is a graph the right structure to represent a social network?
+Why wouldn’t a list or tree work as well for this?
+What performance or structural trade-offs did you notice when adding friends or printing the network?
