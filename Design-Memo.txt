@@ -1,4 +1,22 @@
-Design Memo (Ronan Christie)
+## Design Memo (Ronan Christie)
 Why is a graph the right structure to represent a social network?
 Why wouldn’t a list or tree work as well for this?
 What performance or structural trade-offs did you notice when adding friends or printing the network?
+
+Response: 
+    A graph is the way to structure a social network for a data structure like this because friendships show 
+a connection from point to point between data points and a graph shows the peer to peer connection. The people added to the
+graph represent as nodes which friendships being edges between each of the nodes that have a friendship. The relationship works especially
+in social networks because the data isnt heirachle the data is a equal relation between two people. The implementation I used was where add_friend
+was called when add_friendship was called so it leads to the peer to peer connection. 
+    A list and Tree arent the right thing to use for a data structure in this case because for a tree the information entails a heirachy to each 
+relationship but in the case of a social network it isnt heirachle there is an equal relationship formed between each node/person which can be attatched
+to any other node/person without needing a tree to follow on how they are related to that person or node. The list isnt a good fit either because a list 
+loses efficiency when more things are needed to be considered and a list is in chronological order and can only show one relation per node because of this 
+fact. Both of these things considered it is best for a none hierachle none chronological relational data structure to use a graph for the case of a social 
+network.
+    The social network structure I chose did have some tradeoffs while creating it. When using a person as a object in a dictionary it means that looking someone
+up is instant but each friendship needs to be added to each person individually so two times for each relation. The lookup is still O(1) while adding does end up being
+much slower because of the duplicate checks and the relation checks which both will make the whole program slower as it gets bigger. The alternative would be storing friendships as 
+pairs or using a rlational database with the programs stored data so that there is a unique ID that represents friendship that individuals two datasets join on. If a system
+like this will be put into a large scale production app it would be best to represent a users friendships as a whole set for each user with joins on the common data like mutuals.  
